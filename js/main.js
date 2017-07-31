@@ -67,7 +67,7 @@ function magicien (nom , attaque , defense , santée , mana){
 
 alert("un soigneur connu de tout le monde passé par la, c etait")
 
-var soigneur=new magicien( "merlin", 15 , 8 , 100 , 40);
+var soigneur=new magicien( "merlin", 15 , 8 , 100 , 20);
 
 soigneur.getName();
 
@@ -77,14 +77,16 @@ alert("le " + adv1.nom + " le " + adv2.nom + " attaque notre "
  soigneur.santée= soigneur.santée - (adv1.attaque + adv2.attaque);
  soigneur.getName();
 
-if (soigneur.santée <100){
+if (soigneur.mana<=10) {
+  soigneur.mana=10;
+  soigneur.santé=soigneur.santé-10;
+  alert("merlin n'a plus assez de mana pour ce soigner");
+}
+else if(soigneur.santée <100){
   soigneur.mana=soigneur.mana -10;
   soigneur.santée=soigneur.santée +10;
   alert("merlin se soigne ca vie est de " + soigneur.santée);
   alert("malheureusement en se soignant il perd 10 point de mana et ne lui en reste plus que " + soigneur.mana);
-
-}else if (soigneur.mana<=10) {
-  alert("merlin n'a plus assez de mana");
 }
 else {
   alert("c'est chaud");
