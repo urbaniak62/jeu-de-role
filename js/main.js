@@ -20,7 +20,7 @@ var hero=new player ("GI JO ", 15 , 10 , 100);
   hero.getName();
 /*---------------ADVERSAIRE----------------------*/
 
-var adv1=new player ("guerrier trump", 5 , 13 , 100);
+var adv1=new player ("guerrier trump", 25 , 13 , 100);
 
 /*----------------appel TRUMP---------------------*/
 
@@ -28,7 +28,7 @@ adv1.getName();
 
 /*----------------adversaire 2---------------------*/
 
-var adv2=new player ("guerrier laden", 7 , 8 , 100);
+var adv2=new player ("guerrier laden", 15 , 8 , 100);
 
 /*-----------------appel laden----------------------*/
 
@@ -76,7 +76,8 @@ alert("le " + adv1.nom + " le " + adv2.nom + " attaque notre "
 
  soigneur.santée= soigneur.santée - (adv1.attaque + adv2.attaque);
  soigneur.getName();
-
+ 
+soin=function(){
 if (soigneur.mana<=10) {
   soigneur.mana=10;
   soigneur.santé=soigneur.santé-10;
@@ -91,5 +92,12 @@ else if(soigneur.santée <100){
 else {
   alert("c'est chaud");
 }
-alert("il reste a merlin : ")
+};
+soin();
+
 soigneur.getName();
+
+alert(adv1.nom + "decide de l attaquer dans le dos");
+soigneur.santé=soigneur.santé-adv1.attaque;
+soigneur.getName();
+soin();
